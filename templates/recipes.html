@@ -1,19 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "base.html" %}
+{% block content %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Food Channel</title>
-</head>
+<h2>Extending base</h2>
 
-<body>
-    {% for recipe in recipes %}
-    {{ recipe.recipe_name }}<br>
-    {{ recipe.cuisine }}<br>
-    {{ recipe.meat }}<br>
-    {{ recipe.difficulty }}<br>
-    {% endfor %}
-</body>
+{% for recipe in recipes %}
+{{ recipe.recipe_name }}<br>
+{{ recipe.cuisine }}<br>
+{{ recipe.meat }}<br>
+{{ recipe.difficulty }}<br>
+{% endfor %}
 
-</html>
+{% endblock %}
