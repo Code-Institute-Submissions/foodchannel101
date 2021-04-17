@@ -16,7 +16,28 @@
 
 <body>
 
-    <h1>I'm part of the base template!</h1>
+    <header>
+        <nav>
+            <div class="nav-extended text-shadow">
+                <a href="#!" class="brand-logo"> Food Channel</a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="base.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="login.html">Log In</a></li>
+                    <li><a href="register.html">Register</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <ul class="sidenav" id="mobile-demo">
+            <li><a href="base.html">Home</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="login.html">Log In</a></li>
+            <li><a href="register.html">Register</a></li>
+        </ul>
+    </header>
+
     {% block content %}
     {% endblock %}
 
