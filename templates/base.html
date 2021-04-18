@@ -16,7 +16,31 @@
 
 <body>
 
-    <h1>I'm part of the base template!</h1>
+    <header>
+        <nav class="nav-extended text-shadow red darken-4">
+            <div class="nav-wrapper">
+                <a href="{{ url_for('get_recipes') }}" class="brand-logo">Food Channel</a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="{{ url_for('get_recipes') }}">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="login.html">Log In</a></li>
+                    <li><a href="register.html">Register</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <ul class="sidenav" id="mobile-demo">
+            <li>
+                <h4 class="center-align red darken-4">Food Channel</h4>
+            </li>
+            <li><a href="{{ url_for('get_recipes') }}">Home</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="login.html">Log In</a></li>
+            <li><a href="register.html">Register</a></li>
+        </ul>
+    </header>
+
     {% block content %}
     {% endblock %}
 
