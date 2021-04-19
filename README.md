@@ -28,3 +28,10 @@ Food Channel is an online cookbook where users can browse recipes. Users can reg
 - As a user, I will be e able to search recipes by ingredients or name.
 - As a user, I will be able to create, read, update and delete my recipes.
 - As a user, I would like to access the site mobile devices and desktop browsers.
+
+
+** Bugs and Fixes
+
+- js query error
+ -- fixed by chnage into jquery lower script
+ --
