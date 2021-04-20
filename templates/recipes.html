@@ -1,12 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
 
-
-{% for recipe in recipes %}
-{{ recipe.recipe_name }}<br>
-{{ recipe.cuisine }}<br>
-{{ recipe.meat }}<br>
-{{ recipe.difficulty }}<br>
-{% endfor %}
+<div class="card-panel ">
+    <div class="col-12">
+        <img class="responsive-img"
+            src="https://res.cloudinary.com/food-channel/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1618934191/annie-spratt-R3LcfTvcGWY-unsplash_tg1ndg.jpg">
+    </div>
+</div>
 
 {% endblock %}
