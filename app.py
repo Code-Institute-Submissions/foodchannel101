@@ -98,7 +98,7 @@ def logout():
 
 @app.route("/add_recipes")
 def add_recipes():
-    return render_template("add_recipes")
+    return render_template("add_recipes.html")
 
 
 if __name__ == "__main__":
