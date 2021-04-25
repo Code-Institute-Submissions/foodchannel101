@@ -96,7 +96,7 @@ def logout():
     return redirect(url_for("login"))
 
 
-@app.route("/add_recipes", methods=["GET", "POST")
+@app.route("/add_recipes", methods=["GET", "POST"])
 def add_recipes():
     if request.method == "POST":
         recipes = {
@@ -109,7 +109,7 @@ def add_recipes():
         }
         mongo.db.recipes.insert_one(recipes)
         flash("Recipe Added")
-        return redirect(url_for("get_recipes"))
+    return redirect(url_for("get_recipes"))
 
 
 if __name__ == "__main__":
