@@ -19,15 +19,10 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
-@app.route("/get_recipes")
+@app.route("/get_recipes", methods=["GET", "POST"])
 def get_recipes():
     recipes = mongo.db.recipes.find()
     return render_template("recipes.html", recipes=recipes)
-
-
-@app.route("/shop", methods=["GET", "POST"])
-def shop():
-    return render_template("shop.html")
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -96,20 +91,9 @@ def logout():
     return redirect(url_for("login"))
 
 
-@app.route("/add_recipes", methods=["GET", "POST"])
+@app.route("/add_recipes")
 def add_recipes():
-    if request.method == "POST":
-        recipes = {
-            "recipe_name": request.form.get("recipe_name"),
-            "cuisine": request.form.get("cuisine"),
-            "meat": request.form.get("meat"),
-            "difficulty": request.form.get("difficulty"),
-            "recipe_description": request.form.get("recipe_description"),
-            "created_by": session["user"]
-        }
-        mongo.db.recipes.insert_one(recipes)
-        flash("Recipe Added")
-    return redirect(url_for("get_recipes"))
+    return render_template("add_recipes.html")
 
 
 if __name__ == "__main__":

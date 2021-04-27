@@ -1,68 +1,24 @@
 {% extends "base.html" %}
 {% block content %}
 
-
-<div class="container ">
-    <h5><b>Taste the difference</b></h5>
-    <hr class="shortbar">
-</div>
-
-
-<div class="col valign-wrapper">
-    <span class="red darken-4">
-        <img class="responsive-img"
-            src="https://res.cloudinary.com/food-channel/image/upload/v1618934191/annie-spratt-R3LcfTvcGWY-unsplash_tg1ndg.jpg">
-    </span>
-</div>
-
-
 <ul class="collapsible">
     {% for recipe in recipes %}
     <li>
-        <div class="collapsible-header white-text red darken-4 text-shadow"><i class="fas fa-caret-down"></i>
-            <strong>{{ recipe.recipe_name}}</strong>
+        <div class="collapsible-header white-text red darken-4 text-shadow">
+            <i class="fas fa-caret-down"></i>
+            <strong>{{ recipe.category_name }}</strong>{{ recipe.due_date }}
             {% if recipe.is_urgent == "on" %}
-            <i class="fas fa-star yellow-text text-lighten-2 tooltipped" data-position="right"
-                data-tooltip="URGENT!"></i>
+            <i class="fas fa-star darken-4 yellow-text tooltipped" data-position="right" data-tooltip="favorite"></i>
             {% endif %}
+
+            <div class="collapsible-body">
+                <strong>{{ recipe.recipe_name }}</strong>
+                <p>{{ recipe.recipe_description }}</p>
+            </div>
         </div>
-        <div class="collapsible-body">
-            <strong>{{ recipe.cuisine }}</strong>
-        </div>
-        <div class="collapsible-body">
-            <strong>{{ recipe.meat }}</strong>
-        </div>
-        <div class="collapsible-body">
-            <strong>{{ recipe.difficulty }}</strong>
-        </div>
-    </li>
-    <li>
-    <li>
-        <div class="collapsible-header white-text red darken-4 text-shadow"><i class="fas fa-caret-down"></i>
-            <strong>{{ recipe.recipe_name}}</strong>
-            {% if recipe.is_urgent == "off" %}
-            <i class="fas fa-star yellow-text text-lighten-2 tooltipped" data-position="right"
-                data-tooltip="favorite!"></i>
-            {% endif %}
-        </div>
-        <div class="collapsible-body">
-            <strong>{{ recipe.cuisine }}</strong>
-        </div>
-        <div class="collapsible-body">
-            <strong>{{ recipe.meat }}</strong>
-        </div>
-        <div class="collapsible-body">
-            <strong>{{ recipe.difficulty }}</strong>
-    </li>
-    <li>
-        <div class="collapsible-header white-text red darken-4 text-shadow"><i class="fas fa-caret-down"></i>Italian
-        </div>
-        <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
     </li>
     {% endfor %}
 </ul>
-
-
 
 <div>
     <div class="container">
@@ -79,7 +35,8 @@
                     src="https://res.cloudinary.com/food-channel/image/upload/v1618934002/samples/food/fish-vegetables.jpg">
             </div>
             <div class="card-content">
-                <p>I am a very simple card. I am good at containing small bits of information.</p>
+                <p>I am a very simple card. I am good at containing small bits of information.
+                </p>
             </div>
             <div class="card-action">
                 <a href="#">Something‘s Fishy</a>
@@ -93,7 +50,8 @@
                 <img src="https://res.cloudinary.com/food-channel/image/upload/v1618934000/samples/food/dessert.jpg">
             </div>
             <div class="card-content">
-                <p>I am a very simple card. I am good at containing small bits of information.</p>
+                <p>I am a very simple card. I am good at containing small bits of information.
+                </p>
             </div>
             <div class="card-action">
                 <a href="#">Cheesy Cake</a>
@@ -108,7 +66,8 @@
                     src="https://res.cloudinary.com/food-channel/image/upload/v1618934002/samples/food/pot-mussels.jpg">
             </div>
             <div class="card-content">
-                <p>I am a very simple card. I am good at containing small bits of information.</p>
+                <p>I am a very simple card. I am good at containing small bits of information.
+                </p>
             </div>
             <div class="card-action">
                 <a href="#">Pot Mussels</a>
