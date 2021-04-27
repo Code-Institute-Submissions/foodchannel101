@@ -4,17 +4,24 @@
 <ul class="collapsible">
     {% for recipe in recipes %}
     <li>
-        <div class="collapsible-header white-text red darken-4 text-shadow">
-            <i class="fas fa-caret-down"></i>
-            <strong>{{ recipe.category_name }}</strong>{{ recipe.due_date }}
-            {% if recipe.is_urgent == "on" %}
-            <i class="fas fa-star darken-4 yellow-text tooltipped" data-position="right" data-tooltip="favorite"></i>
-            {% endif %}
-
-            <div class="collapsible-body">
-                <strong>{{ recipe.recipe_name }}</strong>
-                <p>{{ recipe.recipe_description }}</p>
+        <div class="collapsible-header white-text  grey lighten-1">
+            <div class="col s3">
+                <i class="fas fa-caret-down"></i>
+                <a href="" class="btn-small grey">Done</a>
+                <a href="" class="btn-small red">Edit</a>
             </div>
+            <div class="col s9">
+                <strong>{{ recipe.recipe_name }}</strong> : {{ recipe.due_date }}
+                {% if recipe.is_urgent == "on" %}
+                <i class="fas fa-star yellow-text lighten-2 tooltipped" data-position="right"
+                    data-tooltip="Favorite"></i>
+                {% endif %}
+            </div>
+        </div>
+        <div class="collapsible-body">
+            <strong>{{ recipe.category_name }}</strong>
+            <p>{{ recipe.recipe_description }}</p>
+            <p><em>by: {{ recipe.created_by }}</em></p>
         </div>
     </li>
     {% endfor %}
@@ -22,7 +29,7 @@
 
 <div>
     <div class="container">
-        <h5 class="center-align">Our favourites<i class="material-icons text-shadow">favorite</i></h5>
+        <h5 class="center-align">Our favourites<i class="material-icons"></h5>
         <hr class="shortbar">
     </div>
 </div>
