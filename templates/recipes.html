@@ -1,14 +1,26 @@
 {% extends "base.html" %}
 {% block content %}
 
+<div class="container ">
+    <h5 class="text-shadow darken-grey-text"><b>Blog & Cook</b></h5>
+    <hr class="shortbar">
+</div>
+
+<div class="col valign-wrapper">
+    <span class="red darken-4">
+        <img class="responsive-img"
+            src="https://res.cloudinary.com/food-channel/image/upload/v1618934191/annie-spratt-R3LcfTvcGWY-unsplash_tg1ndg.jpg">
+    </span>
+</div>
+
 <ul class="collapsible">
     {% for recipe in recipes %}
     <li>
         <div class="collapsible-header white-text  grey lighten-1">
             <div class="col s3">
                 <i class="fas fa-caret-down"></i>
-                <a href="" class="btn-small grey">Done</a>
-                <a href="" class="btn-small red">Edit</a>
+                <a href="{{ url_for('get_recipes', recipe_id=recipe._id) }}" class="btn-small grey">Done</a>
+                <a href="{{ url_for('edit_recipes', recipe_id=recipe._id) }}" class="btn-small red">Edit</a>
             </div>
             <div class="col s9">
                 <strong>{{ recipe.recipe_name }}</strong> : {{ recipe.due_date }}

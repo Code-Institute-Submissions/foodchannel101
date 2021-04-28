@@ -42,7 +42,7 @@ def register():
         mongo.db.users.insert_one(register)
 
         session["user"] = request.form.get("username").lower()
-        flash("Registration Successful!")
+        flash("Registered")
         return redirect(url_for(
             "profile", username=session["user"]))
     return render_template("register.html")
@@ -86,7 +86,7 @@ def profile(username):
 
 @app.route("/logout")
 def logout():
-    flash("Successfully logged out")
+    flash("Logged out")
     session.pop("user")
     return redirect(url_for("login"))
 
@@ -103,12 +103,19 @@ def add_recipes():
             "due_date": request.form.get("due_date"),
             "created_by": session["user"]
         }
-        mongo.db.recipes.insert_one(recipes)
-        flash("Task Successfully Added")
+        mongo.db.recipes.insert_one(recipe)
+        flash("Successfully Added")
         return redirect(url_for("get_recipes"))
 
     categories = mongo.db.categories.find().sort("category_name", 1)
-    return render_template("add_recipes.html", categories=categories)
+    return render_template("gert_recipes.html", categories=categories)
+
+
+@app.route("/edit_recipes/<recipe_id>", methods=["GET", "POST"])
+def edit_recipes(recipe_id):
+    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    categories = mongo.db.categories.find().sort("category_name", 1)
+    return render_template("edit_recipes.html", recipe=recipe, categories=categories)
 
 
 if __name__ == "__main__":
