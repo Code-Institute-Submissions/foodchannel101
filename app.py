@@ -108,7 +108,7 @@ def add_recipes():
         return redirect(url_for("get_recipes"))
 
     categories = mongo.db.categories.find().sort("category_name", 1)
-    return render_template("gert_recipes.html", categories=categories)
+    return render_template("add_recipes.html", categories=categories)
 
 
 @app.route("/edit_recipes/<recipe_id>", methods=["GET", "POST"])
