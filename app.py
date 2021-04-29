@@ -24,6 +24,7 @@ def get_login():
     return render_template("login.html")
 
 
+@app.route("/")
 @app.route("/get_recipes", methods=["GET", "POST"])
 def get_recipes():
     recipes = mongo.db.recipes.find()
