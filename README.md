@@ -4,7 +4,7 @@ Food Channel is a 'Recipe Manager Application' where user can manage their own r
 
 The application is catered to food lovers whose inlove with foods and wants to keep and their own recipes.
 
-![site logo](images/annie-spratt.jpg)
+![site logo]()
 
 [Visit deployed site]()
 
@@ -36,3 +36,15 @@ The application is catered to food lovers whose inlove with foods and wants to k
 - js query error
  -- fixed by chnage into jquery lower script
  --
+
+
+
+# NOTE
+
+    -- Thank you for taking your time to view my project. 
+    I am very disappointed on this stage that I messed up my code during submission.
+    I guess I will be needing more time to fix the bugs I have created.
+    I have learned that frustration, stress, sleepless nights, coding very late,not taking a break can cause more problems. 
+    I am hoping to be a better developer and learn from my mistakes. 
+    
+    Thank you for viewing!
