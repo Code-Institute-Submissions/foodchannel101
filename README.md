@@ -1,6 +1,8 @@
 # Food Channel
 ### Data Centric Development Milestone Project
-Food Channel is an online cookbook where users can browse recipes. Users can register, log-in, submit, edit and delete recipes they have created. It is a clean and simple design with short and clear text. The website is catered to food lovers whose inlove with International fusion cuisine.
+Food Channel is a 'Recipe Manager Application' where user can manage their own recipes and blog them in the app which is only visible for registered users. Users can register, log-in, submit, edit and delete recipes they have created. It is simple design with short and clear context and focused on data centric based on the requirements of the MS3 project.
+
+The application is catered to food lovers whose inlove with foods and wants to keep and their own recipes.
 
 ![site logo](images/annie-spratt.jpg)
 
@@ -25,9 +27,8 @@ Food Channel is an online cookbook where users can browse recipes. Users can reg
 
 - As a user, I will be able to sign-up and log-in.
 - As a user, I will be able to browse and navigate Information easily.
-- As a user, I will be e able to search recipes by ingredients or name.
 - As a user, I will be able to create, read, update and delete my recipes.
-- As a user, I would like to access the site mobile devices and desktop browsers.
+- As a user, I would like to access the site through mobile devices and desktop browsers.
 
 
 ** Bugs and Fixes
